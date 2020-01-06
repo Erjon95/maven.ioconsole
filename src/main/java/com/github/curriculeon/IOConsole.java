@@ -39,6 +39,7 @@ public class IOConsole {
      * @param args : optional arguments to send for string formatting
      */
     public void println(String val, Object... args) {
+        out.format((val + "\n"), args);
     }
 
     /**
@@ -47,7 +48,8 @@ public class IOConsole {
      * @return user's input as String
      */
     public String getStringInput(String prompt, Object... args) {
-        return null;
+
+        return scanner.next();
     }
 
     /**
@@ -74,7 +76,7 @@ public class IOConsole {
      * @return user's input as float
      */ // TODO - Change recursion to iteration
     public Float getFloatInput(String prompt, Object... args) {
-        return null;
+        return scanner.nextFloat();
     }
 
     /**
@@ -83,6 +85,13 @@ public class IOConsole {
      * @return user's input as long
      */ // TODO - Change recursion to iteration
     public Long getLongInput(String prompt, Object... args) {
-        return null;
+        return scanner.nextLong();
     }
+
+   /* public static void main(String [] args)
+    {
+        String s = "program";
+        IOConsole ioConsole = new IOConsole();
+        ioConsole.print("This is a test of the %s", s);
+    }*/
 }
